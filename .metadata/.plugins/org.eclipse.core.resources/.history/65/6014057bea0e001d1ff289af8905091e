@@ -1,0 +1,39 @@
+package VendedorPoo;
+import java.util.Scanner;
+public class VendedorPoo {
+
+	
+	public static void main(String[] args) {
+		Scanner consola=new Scanner(System.in);
+		consola.useDelimiter("\n");
+		
+		//Definicion de variables
+		int N,tipo;
+		String nombre;
+		long documento;
+		double ventas,comision=0, total_comision=0;
+		System.out.println("Cantidad de Vendedores:");
+		N=consola.nextInt();
+		for (int i =0; i<N;i++) {
+			System.out.println("Documento de Identidad: ");
+			documento=consola.nextLong();
+			System.out.println("Nombre Vendedor: ");
+			nombre=consola.next();
+			consola.nextLine();
+			System.out.println("Tipo(1:Puerta a Puerta, 2: Telemercadeo): ");
+			tipo=consola.nextInt();
+			System.out.println("Ventas del Mes: ");
+			ventas=consola.nextDouble();
+			//Utilizacion de clase-creacion del objeto
+			Vendedor vendedor= new Vendedor(documento, nombre, tipo, ventas);
+			comision=vendedor.pagocomision();
+			System.out.println("Nombre Vendedor: "+nombre);
+			System.out.println("Comision: "+comision);
+			total_comision+=comision;
+							
+		}
+		
+		System.out.println("Total Comisiones: "+total_comision);
+	}
+
+}

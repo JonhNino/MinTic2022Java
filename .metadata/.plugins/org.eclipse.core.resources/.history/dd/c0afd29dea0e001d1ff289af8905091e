@@ -1,0 +1,38 @@
+package VendedorPoo;
+
+public class Vendedor {
+
+//		Definicion de atributos
+	long documento;
+	String nombre;
+	int tipo;
+	double ventas;
+	//Definicion de los metodos
+	//Constructor
+	
+
+
+
+	public Vendedor(long documento, String nombre, int tipo, double ventas) {
+		// TODO Auto-generated constructor stub
+		this.documento = documento;
+		this.nombre =nombre;
+		this.tipo = tipo;
+		this.ventas = ventas;
+	}
+
+
+	public double pagocomision() {
+		double comision=0;
+		if(this.tipo==1) {
+			comision=this.ventas*0.25;
+		}
+		else {
+			comision=this.ventas*0.20;
+		}
+		return comision;		
+	}
+
+	
+	
+}
